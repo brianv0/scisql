@@ -1,0 +1,15 @@
+sudo: true
+language: python
+python:
+  - '2.7'
+  - '3.5'
+  - '3.6'
+
+before_install:
+  - apt-get install -y build-essential mariadb-server libmysqlclient-dev
+  - pip install mako
+
+script:
+   - ./waf --mysql-config /usr/bin/mysql_config configure
+   - make
+   - make install
