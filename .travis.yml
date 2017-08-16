@@ -13,4 +13,4 @@ before_install:
 script:
    - ./waf --mysql-config /usr/bin/mysql_config configure
    - make
-   - make install
+   - sudo make install
